@@ -1,7 +1,6 @@
 import express, { Router, Request, Response } from "express";
 import bodyParser from "body-parser";
 import { filterImageFromURL, deleteLocalFiles } from "./util/util";
-import { join } from "bluebird";
 
 (async () => {
   // Init the Express application
@@ -20,7 +19,7 @@ import { join } from "bluebird";
   app.get("/filteredimage/", async (req: Request, res: Response) => {
     //    1. validate the image_url query
     //    image_url: URL of a publicly accessible image
-    let { image_url } = req.query;
+    let { image_url }: any = req.query;
     if (!image_url) {
       return res.status(400).send(`image_url is required`);
     }
@@ -29,7 +28,7 @@ import { join } from "bluebird";
     const image = await filterImageFromURL(image_url);
 
     //    3. send the resulting file in the response
-    res.sendFile(image, function (err) {
+    res.sendFile(image, function (err: any) {
       //    4. deletes any files on the server on finish of the response
       const files = fs.readdirSync(url);
       const absolutePaths: Array<string> = [];
