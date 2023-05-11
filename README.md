@@ -53,4 +53,10 @@ Add your own domain name and have it point to the running services (try adding a
 ### My Deployment
 
 URL: http://udagram-thanhnt-dev-dev.us-east-1.elasticbeanstalk.com/
+
 Endpoint: http://udagram-thanhnt-dev-dev.us-east-1.elasticbeanstalk.com/filteredimage?image_url=https://cdn.pixabay.com/photo/2021/03/08/12/41/copyright-6079016__340.jpg
+
+### My Repository
+two branches:
+1. main branch as master branch
+2. dev branch as development branch
